@@ -10,7 +10,11 @@
 <ul>
 {% for item in items %}
     <li>
-        {{ item.description }} - Priority: {{ item.priority }} 
+        {{ item.description }} - Priority: {{ item.priority }}
+        <form action="/update/{{ item.description }}" method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.submit() }}
+        </form>
     </li>
 {% endfor %}
 </ul>
